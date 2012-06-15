@@ -1,0 +1,52 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="actions">
+
+	<%= f.hidden_field :user_id%>
+
+	<%=f.label "First Name:"%>
+<%=f.text_field :first_name %></br>
+<%=f.label "Last Name:"%>
+<%=f.text_field :last_name %></br>
+<%=f.label "nickname:"%>
+<%=f.text_field :nickname %><br>
+<%=f.label "Job Title:"%>
+<%=f.text_field :job_title %></br>
+<%=f.label "Phone #:"%>
+<%=f.text_field :phone %></br>
+<%=f.label "email:"%>
+<%=f.text_field :email %></br>
+<%=f.label "twitter: @"%>
+<%=f.text_field :twitter %><br>
+<%=f.label "Address:"%>
+<%=f.text_field :address %><br>
+<%=f.label "City:"%>
+<%=f.text_field :city %></br>
+<%=f.label "State:"%>
+<%=f.text_field :state %></br>
+<%=f.label "Zip:"%>
+<%=f.text_field :zip %><br>
+<%=f.label "Where did you meet?"%>
+<%=f.text_field :we_met_at %></br>
+<%=f.label "When did you meet?"%>
+<%=f.text_field :we_met_on %></br>
+<%=f.label "What did you chat about?"%>
+<%=f.text_field :we_chatted_about %></br>
+<%=f.label "How would you describe them, in a word or two (or twelve)?"%>
+<%=f.text_field :adjective %></br>
+<%= f.label "Add a picture"%>
+<%= f.file_field :photo %></br>
+
+<%= f.submit %>
+</div>
+<% end %>

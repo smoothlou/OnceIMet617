@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<h1>Group: <%= @group.name %></h1>
+  <ul>
+  <% @members.each do |member|%>
+    <li><%= link_to member.first_name + "    " + member.last_name, contact_url(member.id)%></li>
+  </ul>
+  <%end%></br></br>
+	
+
+
+
+
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', contacts_url %>

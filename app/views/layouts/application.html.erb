@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  		<title>OnceIMetApp</title>
+  			<%= stylesheet_link_tag    "application", :media => "all" %>
+  			<%= javascript_include_tag "application" %>
+  			<%= csrf_meta_tags %>
+</head>
+	<header><%= link_to image_tag("Once-I-met-Home-Page-May.png"), root_url  %>
+	<ul>
+		<%#=render "contacts/form", @contact => Contact.find(4) %>
+		
+<body>
+	<%= yield %>
+</body>
+</html>
