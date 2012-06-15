@@ -1,0 +1,277 @@
+/*
+* Skeleton V1.1
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 8/17/2011
+*/
+
+/* Table of Contents
+==================================================
+    #Import Base Style
+    #Variables & Mixins
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing
+    #Import Custom Layout */
+
+
+
+/* #Variables & Mixins
+================================================== */
+$sk-col-width:  40px;   //column width
+$sk-col-gutter: 20px;   //column gutter size
+$sk-col-count:  16;     //total column count
+$sk-tablet-col: 28px;   //column width for tablet portrait
+
+@mixin grid-width($col-width: $sk-col-width) {
+    width: ($col-width * $sk-col-count) + ($sk-col-gutter * ($sk-col-count));
+}
+
+@mixin grid-third-width($parts: 1, $col-width: $sk-col-width) {
+    width: (((($col-width * $sk-col-count) + ($sk-col-gutter * ($sk-col-count))) / 3) * $parts) - $sk-col-gutter;
+}
+
+@mixin columns($col-size: 1, $col-width: $sk-col-width) {
+    width: ($col-width * $col-size) + ($sk-col-gutter * ($col-size - 1));
+}
+
+@mixin column-offset($offset-size: 1, $col-width: $sk-col-width) {
+    padding-left: ($col-width + $sk-col-gutter) * $offset-size;
+}
+
+/* #Base 960 Grid
+================================================== */
+
+    .container {                      position: relative; margin: 0 auto; padding: 0; 
+                                      @include grid-width();
+                                     
+        .row                        { margin-bottom: 20px; }
+        .column, .columns           { float: left; 
+                                      display: inline; 
+                                      margin-left: ($sk-col-gutter / 2); 
+                                      margin-right: ($sk-col-gutter / 2);
+
+
+            &.alpha                 { margin-left: 0; }
+            &.omega                 { margin-right: 0; }
+        
+            /* Base Grid */
+            &.one                   { @include columns(1); }
+            &.two                   { @include columns(2); }
+            &.three                 { @include columns(3);}
+            &.four                  { @include columns(4); }
+            &.five                  { @include columns(5); }
+            &.six                   { @include columns(6); }
+            &.seven                 { @include columns(7); }
+            &.eight                 { @include columns(8); }
+            &.nine                  { @include columns(9); }
+            &.ten                   { @include columns(10); }
+            &.eleven                { @include columns(11); }
+            &.twelve                { @include columns(12); }
+            &.thirteen              { @include columns(13); }
+            &.fourteen              { @include columns(14); }
+            &.fifteen               { @include columns(15); }
+            &.sixteen               { @include columns(16); }
+
+            &.one-third             { @include grid-third-width(1); }
+            &.two-thirds            { @include grid-third-width(2); }
+
+        } //.column, columns
+
+        /* Offsets */
+        .offset-by-one               { @include column-offset(1); }
+        .offset-by-two               { @include column-offset(2); }
+        .offset-by-three             { @include column-offset(3); }
+        .offset-by-four              { @include column-offset(4); }
+        .offset-by-five              { @include column-offset(5); }
+        .offset-by-six               { @include column-offset(6); }
+        .offset-by-seven             { @include column-offset(7); }
+        .offset-by-eight             { @include column-offset(8); }
+        .offset-by-nine              { @include column-offset(9); }
+        .offset-by-ten               { @include column-offset(10); }
+        .offset-by-eleven            { @include column-offset(11); }
+        .offset-by-twelve            { @include column-offset(12); }
+        .offset-by-thirteen          { @include column-offset(13); }
+        .offset-by-fourteen          { @include column-offset(14); }
+        .offset-by-fifteen           { @include column-offset(15); }
+    } //.container
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        .container {                      position: relative; margin: 0 auto; padding: 0; 
+                                          @include grid-width($sk-tablet-col);
+                                     
+            .row                        { margin-bottom: 20px; }
+            .column, .columns           { 
+            
+                /* Base Grid */
+                &.one                   { @include columns(1, $sk-tablet-col); }
+                &.two                   { @include columns(2, $sk-tablet-col); }
+                &.three                 { @include columns(3, $sk-tablet-col);}
+                &.four                  { @include columns(4, $sk-tablet-col); }
+                &.five                  { @include columns(5, $sk-tablet-col); }
+                &.six                   { @include columns(6, $sk-tablet-col); }
+                &.seven                 { @include columns(7, $sk-tablet-col); }
+                &.eight                 { @include columns(8, $sk-tablet-col); }
+                &.nine                  { @include columns(9, $sk-tablet-col); }
+                &.ten                   { @include columns(10, $sk-tablet-col); }
+                &.eleven                { @include columns(11, $sk-tablet-col); }
+                &.twelve                { @include columns(12, $sk-tablet-col); }
+                &.thirteen              { @include columns(13, $sk-tablet-col); }
+                &.fourteen              { @include columns(14, $sk-tablet-col); }
+                &.fifteen               { @include columns(15, $sk-tablet-col); }
+                &.sixteen               { @include columns(16, $sk-tablet-col); }
+
+                &.one-third             { @include grid-third-width(1, $sk-tablet-col); }
+                &.two-thirds            { @include grid-third-width(2, $sk-tablet-col); }
+
+            } //.column, columns
+
+            /* Offsets */
+            .offset-by-one               { @include column-offset(1, $sk-tablet-col); }
+            .offset-by-two               { @include column-offset(2, $sk-tablet-col); }
+            .offset-by-three             { @include column-offset(3, $sk-tablet-col); }
+            .offset-by-four              { @include column-offset(4, $sk-tablet-col); }
+            .offset-by-five              { @include column-offset(5, $sk-tablet-col); }
+            .offset-by-six               { @include column-offset(6, $sk-tablet-col); }
+            .offset-by-seven             { @include column-offset(7, $sk-tablet-col); }
+            .offset-by-eight             { @include column-offset(8, $sk-tablet-col); }
+            .offset-by-nine              { @include column-offset(9, $sk-tablet-col); }
+            .offset-by-ten               { @include column-offset(10, $sk-tablet-col); }
+            .offset-by-eleven            { @include column-offset(11, $sk-tablet-col); }
+            .offset-by-twelve            { @include column-offset(12, $sk-tablet-col); }
+            .offset-by-thirteen          { @include column-offset(13, $sk-tablet-col); }
+            .offset-by-fourteen          { @include column-offset(14, $sk-tablet-col); }
+            .offset-by-fifteen           { @include column-offset(15, $sk-tablet-col); }
+        } //.container
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        .container { width: 300px; 
+            
+            .columns, .column { margin: 0; 
+
+                &.one,
+                &.two,
+                &.three,
+                &.four,
+                &.five,
+                &.six,
+                &.seven,
+                &.eight,
+                &.nine,
+                &.ten,
+                &.eleven,
+                &.twelve,
+                &.thirteen,
+                &.fourteen,
+                &.fifteen,
+                &.sixteen,
+                &.one-third,
+                &.two-thirds { width: 300px; }
+
+                /* Offsets */
+                .offset-by-one,
+                .offset-by-two,
+                .offset-by-three,
+                .offset-by-four,
+                .offset-by-five,
+                .offset-by-six,
+                .offset-by-seven,
+                .offset-by-eight,
+                .offset-by-nine,
+                .offset-by-ten,
+                .offset-by-eleven,
+                .offset-by-twelve,
+                .offset-by-thirteen,
+                .offset-by-fourteen,
+                .offset-by-fifteen { padding-left: 0; }
+
+            } // .column, .columns
+        } // .container
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .container { width: 420px; 
+
+            .columns, .column { margin: 0; 
+
+                &.one,
+                &.two,
+                &.three,
+                &.four,
+                &.five,
+                &.six,
+                &.seven,
+                &.eight,
+                &.nine,
+                &.ten,
+                &.eleven,
+                &.twelve,
+                &.thirteen,
+                &.fourteen,
+                &.fifteen,
+                &.sixteen,
+                &.one-third,
+                &.two-thirds { width: 420px; }
+
+            } // .column, .columns
+        } // .container
+    }
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }

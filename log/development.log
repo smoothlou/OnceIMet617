@@ -19405,3 +19405,3721 @@ Processing by ContactsController#show as HTML
   [1m[36mStory Load (0.2ms)[0m  [1mSELECT "stories".* FROM "stories" WHERE "stories"."contact_id" = 4 ORDER BY updated_at desc[0m
   Rendered contacts/show.html.erb within layouts/application (7.3ms)
 Completed 200 OK in 992ms (Views: 11.7ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateContacts (20120507180221)
+Migrating to AddColumnsToContacts (20120507194954)
+Migrating to CreateUsers (20120525025258)
+Migrating to CreateStories (20120604171049)
+Migrating to AddPasswordDigestToUsers (20120605163301)
+Migrating to AddGroupsToContacts (20120606034251)
+Migrating to CreateGroups (20120608042039)
+Migrating to RemoveGroupFromContact (20120609005501)
+Migrating to AddUserIDtoContact (20120609011532)
+Migrating to AddPhotosToContacts (20120613013554)
+Migrating to AddGroupIdToContacts (20120613045317)
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("contacts")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("groups")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("stories")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 14:25:33 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.8ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.6ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (9.5ms)
+  Rendered contacts/index.html.erb within layouts/application (25.6ms)
+Compiled jquery.js  (4ms)  (pid 36702)
+Compiled jquery_ujs.js  (1ms)  (pid 36702)
+Compiled application.js  (103ms)  (pid 36702)
+Completed 200 OK in 413ms (Views: 175.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /application.css - 200 OK (19ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /groups.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /users.js - 200 OK (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /application.js - 200 OK (20ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /stories.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /user.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (12ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 14:25:34 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CemEtHLs+dLZrbR7+JAPSIwnCyotI9HRPPS9oWZozxI=", "user"=>{"first"=>"Matt", "last"=>"Reich", "email"=>"reich.matt@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (11.1ms)[0m  INSERT INTO "users" ("created_at", "email", "first", "last", "password", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 15 Jun 2012 19:26:18 UTC +00:00], ["email", "reich.matt@gmail.com"], ["first", "Matt"], ["last", "Reich"], ["password", nil], ["password_digest", "$2a$10$iHTrctANqzw9Ax.1wEzbi./MJ7ZRkhlQ0aSqedLywvr.4bBbOxqJS"], ["updated_at", Fri, 15 Jun 2012 19:26:18 UTC +00:00]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 131ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.5ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered contacts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /contacts.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (5ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 14:26:18 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (3ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CemEtHLs+dLZrbR7+JAPSIwnCyotI9HRPPS9oWZozxI=", "email"=>"reich.matt@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'reich.matt@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 119ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (1.8ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 74ms (Views: 68.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /contacts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /trash-can-icon.jpg - 200 OK (9ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:26:27 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2012-06-15 14:26:41 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CemEtHLs+dLZrbR7+JAPSIwnCyotI9HRPPS9oWZozxI=", "contact"=>{"user_id"=>"", "first_name"=>"Bob"}, "commit"=>"Create Contact"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "contacts" ("address", "adjective", "city", "created_at", "email", "first_name", "group_id", "job_title", "last_name", "nickname", "phone", "photo_content_type", "photo_file_name", "photo_file_size", "state", "twitter", "updated_at", "user_id", "we_chatted_about", "we_met_at", "we_met_on", "zip") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", nil], ["adjective", nil], ["city", nil], ["created_at", Fri, 15 Jun 2012 19:26:41 UTC +00:00], ["email", nil], ["first_name", "Bob"], ["group_id", nil], ["job_title", nil], ["last_name", nil], ["nickname", nil], ["phone", nil], ["photo_content_type", nil], ["photo_file_name", nil], ["photo_file_size", nil], ["state", nil], ["twitter", nil], ["updated_at", Fri, 15 Jun 2012 19:26:41 UTC +00:00], ["user_id", 5], ["we_chatted_about", nil], ["we_met_at", nil], ["we_met_on", nil], ["zip", nil]]
+[paperclip] Saving attachments.
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/7
+Completed 302 Found in 23ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/contacts/7" for 127.0.0.1 at 2012-06-15 14:26:41 -0500
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" WHERE "stories"."contact_id" = 7
+  Rendered contacts/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 89ms (Views: 19.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /contacts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /pencil.png - 200 OK (9ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:26:42 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (1ms)
+
+
+Started PUT "/contacts/7" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Processing by ContactsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CemEtHLs+dLZrbR7+JAPSIwnCyotI9HRPPS9oWZozxI=", "contact"=>{"group_id"=>"1"}, "commit"=>"Update Contact", "id"=>"7"}
+  [1m[36mContact Load (0.4ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "contacts" SET "group_id" = 1, "updated_at" = '2012-06-15 19:26:50.019587' WHERE "contacts"."id" = 7[0m
+[paperclip] Saving attachments.
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/contacts/7
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/contacts/7" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" WHERE "stories"."contact_id" = 7[0m
+  Rendered contacts/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /groups.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:26:50 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts/7/edit" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Processing by ContactsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered contacts/_form.html.erb (58.0ms)
+  Rendered contacts/edit.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 72ms (Views: 70.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /groups.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:26:53 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.6ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 64ms (Views: 53.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /contacts.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:03 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:27:04 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CemEtHLs+dLZrbR7+JAPSIwnCyotI9HRPPS9oWZozxI=", "contact"=>{"user_id"=>"", "first_name"=>"Hal"}, "commit"=>"Create Contact"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "contacts" ("address", "adjective", "city", "created_at", "email", "first_name", "group_id", "job_title", "last_name", "nickname", "phone", "photo_content_type", "photo_file_name", "photo_file_size", "state", "twitter", "updated_at", "user_id", "we_chatted_about", "we_met_at", "we_met_on", "zip") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", nil], ["adjective", nil], ["city", nil], ["created_at", Fri, 15 Jun 2012 19:27:10 UTC +00:00], ["email", nil], ["first_name", "Hal"], ["group_id", nil], ["job_title", nil], ["last_name", nil], ["nickname", nil], ["phone", nil], ["photo_content_type", nil], ["photo_file_name", nil], ["photo_file_size", nil], ["state", nil], ["twitter", nil], ["updated_at", Fri, 15 Jun 2012 19:27:10 UTC +00:00], ["user_id", 5], ["we_chatted_about", nil], ["we_met_at", nil], ["we_met_on", nil], ["zip", nil]]
+[paperclip] Saving attachments.
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/8
+Completed 302 Found in 10ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/contacts/8" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mGroup Load (0.5ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.2ms)[0m  SELECT "stories".* FROM "stories" WHERE "stories"."contact_id" = 8
+  Rendered contacts/show.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 70ms (Views: 65.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /contacts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /groups.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /sessions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:27:10 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts/8/edit" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Processing by ContactsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  Rendered contacts/_form.html.erb (14.0ms)
+  Rendered contacts/edit.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:27:12 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started PUT "/contacts/8" for 127.0.0.1 at 2012-06-15 14:28:42 -0500
+Processing by ContactsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CemEtHLs+dLZrbR7+JAPSIwnCyotI9HRPPS9oWZozxI=", "contact"=>{"user_id"=>"5", "first_name"=>"Hal", "last_name"=>"Halvorson", "nickname"=>"Crazy Hal", "job_title"=>"Plumber", "phone"=>"555-555-5555", "email"=>"hal@plumbersareawesome.com", "twitter"=>"haltheplumber", "address"=>"2133 n 1st. Ave", "city"=>"Chicago", "state"=>"IL", "zip"=>"60625", "we_met_at"=>"Bowling Alley", "we_met_on"=>"May 17th", "we_chatted_about"=>"Wrench usage in the proper situation", "adjective"=>"ass crack"}, "commit"=>"Update Contact", "id"=>"8"}
+  [1m[35mContact Load (0.1ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  UPDATE "contacts" SET "last_name" = 'Halvorson', "nickname" = 'Crazy Hal', "job_title" = 'Plumber', "phone" = '555-555-5555', "email" = 'hal@plumbersareawesome.com', "twitter" = 'haltheplumber', "address" = '2133 n 1st. Ave', "city" = 'Chicago', "state" = 'IL', "zip" = '60625', "we_met_at" = 'Bowling Alley', "we_met_on" = 'May 17th', "we_chatted_about" = 'Wrench usage in the proper situation', "adjective" = 'ass crack', "updated_at" = '2012-06-15 19:28:42.752980' WHERE "contacts"."id" = 8
+[paperclip] Saving attachments.
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/8
+Completed 302 Found in 10ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/contacts/8" for 127.0.0.1 at 2012-06-15 14:28:42 -0500
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mContact Load (0.1ms)[0m  SELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" WHERE "stories"."contact_id" = 8
+  Rendered contacts/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 865ms (Views: 48.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /sessions.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:28:43 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.5ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 33ms (Views: 23.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /contacts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:31:51 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 14:54:33 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 26ms (Views: 22.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /contacts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (38ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 14:57:00 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /stories.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Once-I-met-Home-Page-May.png" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /Once-I-met-Home-Page-May.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 14:57:58 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:00:32 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:50 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:01:51 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:01:51 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:01:51 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.2ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (45.2ms)
+Compiled application.css  (323ms)  (pid 36702)
+Completed 200 OK in 397ms (Views: 391.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /stories.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:02:55 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 59ms (Views: 54.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /groups.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /user.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /pencil.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:06:02 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /groups.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /sessions.js - 304 Not Modified (43ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:48 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:49 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:07:49 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:07:49 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered contacts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /groups.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 15:07:56 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.2ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (2.7ms)
+  Rendered contacts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 15:08:41 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered contacts/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 56ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 15:10:36 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (0ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2012-06-15 15:10:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FGJ5Thv2P5EiM50gvHch0Pe60Hv20OsnPm+7fcMG47E=", "email"=>"reich.matt@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'reich.matt@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 105ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:10:46 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /groups.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:47 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:10:48 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:10:48 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:10:48 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /groups.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:12:28 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 30ms (Views: 24.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:14:22 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /sessions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (4ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xtrash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:14:51 -0500
+Served asset /xtrash-can-icon.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/xtrash-can-icon.jpg"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:15:09 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+ERROR: compiling _app_views_contacts_index_html_erb__2349131280340658493_70199732488580 RAISED /Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...sh-can-icon.jpg", :size => 20px), group_url(group), :method ...
+...                               ^
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:60: syntax error, unexpected tASSOC, expecting keyword_end
+...), group_url(group), :method => :delete );@output_buffer.saf...
+...                               ^
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:64: syntax error, unexpected keyword_do_block, expecting keyword_end
+...fer.append= form_for(@group) do |g| @output_buffer.safe_conc...
+...                               ^
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:94: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_contacts_index_html_erb__2349131280340658493_70199732488580(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "contacts/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div class="container">
+	<div class="sixteen columns">
+    
+    		<div class="ten columns alpha">
+				<div class="marketing-block">
+');					 if session[:userid].blank? 
+@output_buffer.safe_concat('					<h3>Once I Met is a powerful new tool to manage your friends, acquaintances, colleagues and anyone else you may run into.</h3>
+					');@output_buffer.append= ( image_tag "OIMHP1.jpg" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				</div>
+			</div><!-- end ten columns -->
+    
+      		<div class="six columns omega">
+				<div class="signin-form">
+					
+					<h4>Sign In</h4>
+						');@output_buffer.append=  form_tag sessions_create_url do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( text_field_tag :email, nil, placeholder: "Email" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( password_field_tag :password, nil, placeholder: "Password" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( submit_tag 'Sign in');@output_buffer.safe_concat('
+');		  				end
+@output_buffer.safe_concat('  				</div><!-- end signin-form -->
+  				<div class="signup-form">
+  					<h4>New Here?</h4>
+					');@output_buffer.append= ( render :partial => '/users/form' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				</div><!-- end signup-form -->
+');					 else 
+@output_buffer.safe_concat('
+');					 if session[:userid].present? 
+@output_buffer.safe_concat('						<p>Hello, ');@output_buffer.append= ( current_user.first );@output_buffer.safe_concat('!</p>
+');						 end 
+@output_buffer.safe_concat('						
+						');@output_buffer.append=  form_for(@contact) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= (f.text_field :first_name, placeholder: "who'd you meet today?" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= ( f.hidden_field :user_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			
+');					end
+@output_buffer.safe_concat('		
+			</div><!-- end six columns omega -->
+
+		</div><!-- end sixteen columns -->
+	
+	  <form name= "contact" action="');contacts_url;@output_buffer.safe_concat('" method = "get">
+	    <input type="text" name="keyword" placeholder = "Type a descriptor" >
+		<input type="submit" value = "Search">
+	  </form>
+	
+	  <li>');@output_buffer.append= ( link_to "Sign Out", sign_out_url );@output_buffer.safe_concat('</li>
+			
+    <div id="content">
+');
+@output_buffer.safe_concat('	  <p id="notice">');@output_buffer.append= ( flash[:notice]);@output_buffer.safe_concat('</p>
+');
+@output_buffer.safe_concat('	
+	<div id="thirteen columns">
+	  <h2>Your Groups</h2>
+');	     @groups.each do |group|
+@output_buffer.safe_concat('		  	<ul class="contact-block">
+				<li>');@output_buffer.append= ( link_to group.name, group_url(group.id) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				');@output_buffer.append= ( link_to image_tag("trash-can-icon.jpg", :size => 20px), group_url(group), :method => :delete );@output_buffer.safe_concat('</li>
+			</ul>
+');	    end
+@output_buffer.safe_concat('		
+		');@output_buffer.append= form_for(@group) do |g| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= (g.text_field :name, placeholder: "New Name" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= (g.submit );@output_buffer.safe_concat(' 
+');		end
+@output_buffer.safe_concat('	</div><!-- end thirteen columns -->
+
+	
+	<div id="contacts">	
+	 <h1>Your Contacts</h1>  
+');
+@output_buffer.safe_concat('       <!-- <p>Couldn\'t find a match. Please try again</p> -->
+');
+@output_buffer.safe_concat('	 <ul>
+');	  @contacts.each do |contact| 
+@output_buffer.safe_concat('       <li><h2>');@output_buffer.append= ( link_to "#{contact.first_name} #{contact.last_name}", contact_url(contact.id) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+	');@output_buffer.append= ( link_to image_tag("trash-can-icon.jpg", :size =>'20x20'), contact, confirm: 'Are you sure you want to delete this person?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	  ');@output_buffer.append= ( link_to image_tag("pencil.png", :size =>'20x20'), edit_contact_url(contact));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	  </li></h2>
+');@output_buffer.safe_concat('	 ');end;@output_buffer.safe_concat('</br></br>
+
+       <li>');@output_buffer.append= ( paginate @contacts);@output_buffer.safe_concat('</li>
+    
+');
+@output_buffer.safe_concat('	   <li>');@output_buffer.append= ( link_to 'Create a new contact!', new_contact_path );@output_buffer.safe_concat('</li>
+	</div>
+');    end 
+@output_buffer.safe_concat('   		</div><!-- end sixteen columns -->
+   	</div><!-- container -->
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `module_eval'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `compile'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:233:in `compile!'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:142:in `block in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:125:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:141:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/Users/mattreich/rails_projects/OnceIMet617/app/controllers/contacts_controller.rb:25:in `index'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:414:in `_run__864217315028644660__process_action__2056653758618478679__callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__1095295656972767184__call__1191349756249478356__callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/engine.rb:479:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/application.rb:220:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered contacts/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...sh-can-icon.jpg", :size => 20px), group_url(group), :method ...
+...                               ^
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:60: syntax error, unexpected tASSOC, expecting keyword_end
+...), group_url(group), :method => :delete );@output_buffer.saf...
+...                               ^
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:64: syntax error, unexpected keyword_do_block, expecting keyword_end
+...fer.append= form_for(@group) do |g| @output_buffer.safe_conc...
+...                               ^
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:94: syntax error, unexpected keyword_ensure, expecting $end):
+    57: 	    <% @groups.each do |group|%>
+    58: 		  	<ul class="contact-block">
+    59: 				<li><%= link_to group.name, group_url(group.id) %>
+    60: 				<%= link_to image_tag("trash-can-icon.jpg", :size => 20px), group_url(group), :method => :delete %></li>
+    61: 			</ul>
+    62: 	    <%end%>
+    63: 		
+  app/controllers/contacts_controller.rb:25:in `index'
+
+
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:15:27 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 64ms (Views: 58.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:16:03 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.2ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 27ms (Views: 21.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:16:16 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 73ms (Views: 68.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:17:59 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.2ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 39ms (Views: 30.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (4ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:18:53 -0500
+Served asset /pencil.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 28ms (Views: 23.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /groups.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:19:11 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.8ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.8ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 39ms (Views: 30.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /application.js - 304 Not Modified (61ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:20:17 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:21:54 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.2ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.7ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (27.9ms)
+Compiled application.css  (278ms)  (pid 36702)
+Completed 200 OK in 481ms (Views: 468.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /application.css - 200 OK (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (6ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:21:55 -0500
+Served asset /pencil.png - 304 Not Modified (2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.2ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered contacts/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 38ms (Views: 29.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /sessions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 15:24:03 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (4ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2012-06-15 15:24:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T3gPWoK+t4WRpDiY6mJVvGi9s/Pzs49I4fJKlj6xlC8=", "email"=>"reich.matt@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'reich.matt@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:24:11 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.2ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.8ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (105.5ms)
+Completed 200 OK in 127ms (Views: 119.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:24:11 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /contacts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trash-can-icon.jpg" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /trash-can-icon.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pencil.png" for 127.0.0.1 at 2012-06-15 15:24:12 -0500
+Served asset /pencil.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.7ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.7ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 85ms (Views: 71.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:35:20 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.7ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.5ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (149.9ms)
+Completed 200 OK in 185ms (Views: 170.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /stories.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:38:44 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.7ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 60ms (Views: 48.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /contacts.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:40:58 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.5ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.6ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 81ms (Views: 73.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /user.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:44:25 -0500
+Served asset /stories.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.6ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:26 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:45:27 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 69ms (Views: 64.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /contacts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:48:53 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /contacts.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /user.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:50:16 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 109ms (Views: 101.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /contacts.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:51:11 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /stories.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:20 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 15:54:48 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /groups.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /user.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 15:54:49 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered contacts/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /stories.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 16:00:10 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.7ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (3.6ms)
+  Rendered contacts/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 237ms (Views: 98.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /jquery.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /stories.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /groups.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /user.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /users.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /application.js - 200 OK (11ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 16:26:12 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 16:27:53 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+ERROR: compiling _app_views_contacts_index_html_erb__2478356311171408445_70154282394260 RAISED /Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:45: syntax error, unexpected keyword_else, expecting keyword_end
+Function body:           def _app_views_contacts_index_html_erb__2478356311171408445_70154282394260(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "contacts/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new; if session[:userid].blank? 
+@output_buffer.safe_concat('<div class="container">
+	<div class="sixteen columns">
+    		<div class="ten columns alpha">
+				<div class="marketing-block">
+					
+					<h3>Once I Met is a powerful new tool to manage your friends, acquaintances, colleagues and anyone else you may run into.</h3>
+					');@output_buffer.append= ( image_tag "OIMHP1.jpg" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				</div>
+			</div><!-- end ten columns -->
+    
+      		<div class="six columns omega">
+				<div class="signin-form">
+					
+					<h4>Sign In</h4>
+						');@output_buffer.append=  form_tag sessions_create_url do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( text_field_tag :email, nil, placeholder: "Email" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( password_field_tag :password, nil, placeholder: "Password" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( submit_tag 'Sign in');@output_buffer.safe_concat('
+');		  				end
+@output_buffer.safe_concat('  				</div><!-- end signin-form -->
+  				<div class="signup-form">
+  					<h4>New Here?</h4>
+					');@output_buffer.append= ( render :partial => '/users/form' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				</div><!-- end signup-form -->
+');					 else 
+@output_buffer.safe_concat('
+');					 if session[:userid].present? 
+@output_buffer.safe_concat('						<p>Hello, ');@output_buffer.append= ( current_user.first );@output_buffer.safe_concat('!</p>
+');						 end 
+@output_buffer.safe_concat('						
+						');@output_buffer.append=  form_for(@contact) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= (f.text_field :first_name, placeholder: "who'd you meet today?" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= ( f.hidden_field :user_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div><!-- end six columns omega -->
+
+	</div><!-- end sixteen columns -->
+</div><!-- container -->
+
+');
+@output_buffer.safe_concat('	
+	  
+');else
+@output_buffer.safe_concat('<div class="container">
+		<div class="thirteen columns">	
+			 <h1>Your Contacts</h1>  
+');
+@output_buffer.safe_concat('		       <!-- <p>Couldn\'t find a match. Please try again</p> -->
+');
+@output_buffer.safe_concat('			 <ul class="contact-block">
+');				  @contacts.each do |contact| 
+@output_buffer.safe_concat('			       <li>');@output_buffer.append= ( link_to "#{contact.first_name} #{contact.last_name}", contact_url(contact.id) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+						');@output_buffer.append= ( link_to 'DELETE', contact, confirm: 'Are you sure you want to delete this person?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				  		');@output_buffer.append= ( link_to 'EDIT', edit_contact_url(contact));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				  </li>
+');				 end
+@output_buffer.safe_concat('
+		       	<li>');@output_buffer.append= ( paginate @contacts);@output_buffer.safe_concat('</li>
+		    
+');
+@output_buffer.safe_concat('			   <li>');@output_buffer.append= ( link_to 'Create a new contact!', new_contact_path );@output_buffer.safe_concat('</li>
+
+');		   	 end 
+@output_buffer.safe_concat('	   	</div><!-- end thirteen columns -->	
+
+		<div id="three columns group-list-block">
+		  <h2>Your Groups</h2>
+');		     @groups.each do |group|
+@output_buffer.safe_concat('			  	<ul>
+					<li>');@output_buffer.append= ( link_to group.name, group_url(group.id) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('					');@output_buffer.append= ( link_to 'DELETE', group_url(group), :method => :delete );@output_buffer.safe_concat('</li>
+				</ul>
+');		    end
+@output_buffer.safe_concat('			
+			');@output_buffer.append= form_for(@group) do |g| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (g.text_field :name, placeholder: "Create a new group" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (g.submit );@output_buffer.safe_concat(' 
+');			end
+@output_buffer.safe_concat('		</div><!-- end three columns group-list-block -->
+
+		<form name= "contact" action="');contacts_url;@output_buffer.safe_concat('" method = "get">
+	    <input type="text" name="keyword" placeholder = "Type a descriptor" >
+		<input type="submit" value = "Search">
+	  </form>
+	
+	  <li>');@output_buffer.append= ( link_to "Sign Out", sign_out_url );@output_buffer.safe_concat('</li>
+			
+');
+@output_buffer.safe_concat('	  <p id="notice">');@output_buffer.append= ( flash[:notice]);@output_buffer.safe_concat('</p>
+');
+@output_buffer.safe_concat('		
+</div><!-- end container -->
+');end;@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `module_eval'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `compile'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:233:in `compile!'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:142:in `block in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:125:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:141:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/Users/mattreich/rails_projects/OnceIMet617/app/controllers/contacts_controller.rb:25:in `index'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:414:in `_run__1701587474567132084__process_action__3622554309171682090__callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__1566231914558720542__call__847479920877542696__callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/engine.rb:479:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/application.rb:220:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered contacts/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:45: syntax error, unexpected keyword_else, expecting keyword_end):
+    42: <%#end%>
+    43: 	
+    44: 	  
+    45: <%else%>
+    46: <div class="container">
+    47: 		<div class="thirteen columns">	
+    48: 			 <h1>Your Contacts</h1>  
+  app/controllers/contacts_controller.rb:25:in `index'
+
+
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 16:28:30 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.2ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+ERROR: compiling _app_views_contacts_index_html_erb__2478356311171408445_70154314729740 RAISED /Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:45: syntax error, unexpected keyword_else, expecting keyword_end
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:97: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:99: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_contacts_index_html_erb__2478356311171408445_70154314729740(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "contacts/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new; if session[:userid].blank? 
+@output_buffer.safe_concat('<div class="container">
+	<div class="sixteen columns">
+    		<div class="ten columns alpha">
+				<div class="marketing-block">
+					
+					<h3>Once I Met is a powerful new tool to manage your friends, acquaintances, colleagues and anyone else you may run into.</h3>
+					');@output_buffer.append= ( image_tag "OIMHP1.jpg" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				</div>
+			</div><!-- end ten columns -->
+    
+      		<div class="six columns omega">
+				<div class="signin-form">
+					
+					<h4>Sign In</h4>
+						');@output_buffer.append=  form_tag sessions_create_url do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( text_field_tag :email, nil, placeholder: "Email" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( password_field_tag :password, nil, placeholder: "Password" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		  					');@output_buffer.append= ( submit_tag 'Sign in');@output_buffer.safe_concat('
+');		  				end
+@output_buffer.safe_concat('  				</div><!-- end signin-form -->
+  				<div class="signup-form">
+  					<h4>New Here?</h4>
+					');@output_buffer.append= ( render :partial => '/users/form' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				</div><!-- end signup-form -->
+');					 else 
+@output_buffer.safe_concat('
+');					 if session[:userid].present? 
+@output_buffer.safe_concat('						<p>Hello, ');@output_buffer.append= ( current_user.first );@output_buffer.safe_concat('!</p>
+');						 end 
+@output_buffer.safe_concat('						
+						');@output_buffer.append=  form_for(@contact) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= (f.text_field :first_name, placeholder: "who'd you meet today?" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('						');@output_buffer.append= ( f.hidden_field :user_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div><!-- end six columns omega -->
+
+	</div><!-- end sixteen columns -->
+</div><!-- container -->
+
+');
+@output_buffer.safe_concat('	
+	  
+');else
+@output_buffer.safe_concat('<div class="container">
+		<div class="thirteen columns">	
+			 <h1>Your Contacts</h1>  
+');
+@output_buffer.safe_concat('		       <!-- <p>Couldn\'t find a match. Please try again</p> -->
+');
+@output_buffer.safe_concat('			 <ul class="contact-block">
+');				  @contacts.each do |contact| 
+@output_buffer.safe_concat('			       <li>');@output_buffer.append= ( link_to "#{contact.first_name} #{contact.last_name}", contact_url(contact.id) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+						');@output_buffer.append= ( link_to 'DELETE', contact, confirm: 'Are you sure you want to delete this person?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				  		');@output_buffer.append= ( link_to 'EDIT', edit_contact_url(contact));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				  </li>
+');				 end
+@output_buffer.safe_concat('
+		       	<li>');@output_buffer.append= ( paginate @contacts);@output_buffer.safe_concat('</li>
+		    
+');
+@output_buffer.safe_concat('			   <li>');@output_buffer.append= ( link_to 'Create a new contact!', new_contact_path );@output_buffer.safe_concat('</li>
+
+');
+@output_buffer.safe_concat('	   	</div><!-- end thirteen columns -->	
+
+		<div id="three columns group-list-block">
+		  <h2>Your Groups</h2>
+');		     @groups.each do |group|
+@output_buffer.safe_concat('			  	<ul>
+					<li>');@output_buffer.append= ( link_to group.name, group_url(group.id) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('					');@output_buffer.append= ( link_to 'DELETE', group_url(group), :method => :delete );@output_buffer.safe_concat('</li>
+				</ul>
+');		    end
+@output_buffer.safe_concat('			
+			');@output_buffer.append= form_for(@group) do |g| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (g.text_field :name, placeholder: "Create a new group" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			');@output_buffer.append= (g.submit );@output_buffer.safe_concat(' 
+');			end
+@output_buffer.safe_concat('		</div><!-- end three columns group-list-block -->
+
+		<form name= "contact" action="');contacts_url;@output_buffer.safe_concat('" method = "get">
+	    <input type="text" name="keyword" placeholder = "Type a descriptor" >
+		<input type="submit" value = "Search">
+	  </form>
+	
+	  <li>');@output_buffer.append= ( link_to "Sign Out", sign_out_url );@output_buffer.safe_concat('</li>
+			
+');
+@output_buffer.safe_concat('	  <p id="notice">');@output_buffer.append= ( flash[:notice]);@output_buffer.safe_concat('</p>
+');
+@output_buffer.safe_concat('		
+</div><!-- end container -->
+');end;@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `module_eval'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:285:in `compile'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:233:in `compile!'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:142:in `block in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:125:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/template.rb:141:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/Users/mattreich/rails_projects/OnceIMet617/app/controllers/contacts_controller.rb:25:in `index'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:414:in `_run__1701587474567132084__process_action__3622554309171682090__callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/notifications.rb:123:in `instrument'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/base.rb:121:in `process'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_controller/metal.rb:246:in `block in action'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/routing/route_set.rb:600:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/query_cache.rb:64:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `_run__1566231914558720542__call__847479920877542696__callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:26:in `call_app'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/logger.rb:16:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.2.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/static.rb:62:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/engine.rb:479:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/application.rb:220:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.2.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/mattreich/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered contacts/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:45: syntax error, unexpected keyword_else, expecting keyword_end
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:97: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mattreich/rails_projects/OnceIMet617/app/views/contacts/index.html.erb:99: syntax error, unexpected $end, expecting keyword_end):
+    42: <%#end%>
+    43: 	
+    44: 	  
+    45: <%else%>
+    46: <div class="container">
+    47: 		<div class="thirteen columns">	
+    48: 			 <h1>Your Contacts</h1>  
+  app/controllers/contacts_controller.rb:25:in `index'
+
+
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (28.9ms)
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/mattreich/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered contacts/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /groups.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 16:33:43 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (0ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wfFe1pyTl7Pt54vQN8MOwbNdPJQU3+blXytCoUu7ToU=", "email"=>"reich.matt@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'reich.matt@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Processing by ContactsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" 
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT "stories".* FROM "stories" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mContact Load (1.8ms)[0m  [1mSELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)
+  Rendered contacts/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 55ms (Views: 49.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:54 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (0.1ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT "contacts".* FROM "contacts" WHERE ((user_id) = 5) LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "contacts" WHERE ((user_id) = 5)[0m
+  Rendered contacts/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 24ms (Views: 18.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /stories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /user.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
+Served asset /application.js - 304 Not Modified (0ms)

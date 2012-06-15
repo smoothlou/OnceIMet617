@@ -1,16 +1,49 @@
 <!DOCTYPE html>
-<html>
-	<head>
-  		<title>OnceIMetApp</title>
-  			<%= stylesheet_link_tag    "application", :media => "all" %>
-  			<%= javascript_include_tag "application" %>
-  			<%= csrf_meta_tags %>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  			<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>OIM App - Contact List</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+  	<%= javascript_include_tag "application" %>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  			
 </head>
-	<header><%= link_to image_tag("Once-I-met-Home-Page-May.png"), root_url  %>
-	<ul>
-		<%#=render "contacts/form", @contact => Contact.find(4) %>
 		
 <body>
+
+	<header>
+		<div class="title-bar">
+			<!-- <div class="global-nav">
+				<ul>
+					<li><a href="#">Sign Up</a></li>
+					<li><a href="#">Sign In</a></li>
+				</ul>
+			</div><!-- end global-nav -->
+			<div id="logo">
+				<h1>Once I Met</h1>
+			</div><!-- end logo -->
+		</div><!-- end title-bar -->
+	</header>
+
 	<%= yield %>
+
 </body>
 </html>
