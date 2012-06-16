@@ -70,7 +70,7 @@ a {
 
 #logo {
 	width: 400px;
-	margin-top: 20px;
+	margin-top: 10px;
 	float: left;
 }
 
@@ -79,14 +79,13 @@ h2 {
 }
 
 header {
-	height: 120px;
+	height: 80px;
 	background-color: $dark-green;
-	margin-bottom: 40px;
 	.title-bar {
 		width: 960px;
 		margin: 0 auto;
 		h1 {
-			padding-top: 20px;
+			padding-top: 0;
 			color: white;
 		}
 	}
@@ -114,10 +113,22 @@ header {
 
 /* #Page Styles
 ================================================== */
+.welcome-message {
+	margin-top: 20px;
+	font-size: 24px;
+}
 
-/* #Sign In | Sign Up View 
-===================================== */
-	
+.you-meet {
+	float: left;
+	margin-top: 20px;
+	li {
+		float: left;
+		margin-left: 10px;
+		span {
+			font-size: 24px;
+		}
+	}
+}	
 
 /* #Contact Input View 
 ===================================== */

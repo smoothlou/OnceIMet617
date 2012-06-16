@@ -23,9 +23,6 @@
   					<h4>New Here?</h4>
 					<%= render :partial => '/users/form' %>
 				</div><!-- end signup-form -->
-			
-
-					
 
 			</div><!-- end six columns omega -->
 
@@ -38,15 +35,19 @@
 <div class="container">
 		<div class="thirteen columns">
 		<%# if session[:userid].present? %>
-		<p id="notice"><%= flash[:notice]%></p>
-		<p>Hello, <%= current_user.first %>!</p>
+		<div id="notice"><%= flash[:notice]%></div>
 		<%# end %>
 		
-		<%= form_for(@contact) do |f| %>
-		<%=f.text_field :first_name, placeholder: "who'd you meet today?" %>
-		<%= f.submit %>
-		<%= f.hidden_field :user_id %>	
-		<%end%>
+		<div class="row thirteen columns">
+			<%= form_for(@contact) do |f| %>
+			<ul class="you-meet">
+				<li><span>Hello, <%= current_user.first %>!</span></li>
+				<li><%=f.text_field :first_name, placeholder: "who'd you meet today?" %></li>
+				<li><%= f.submit %></li>
+				<li><%= f.hidden_field :user_id %></li>	
+			</ul>
+			<%end%>
+		</div>
 			 <h1>Your Contacts</h1>  
 			 <%#= if @contacts.nil %>
 		       <!-- <p>Couldn't find a match. Please try again</p> -->
