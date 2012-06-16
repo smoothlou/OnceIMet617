@@ -23123,3 +23123,58 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 16:33:59 -0500
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-15 19:21:31 -0500
+Processing by ContactsController#index as HTML
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT "groups".* FROM "groups" [0m
+  [1m[35mStory Load (1.3ms)[0m  SELECT "stories".* FROM "stories" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (5.9ms)
+  Rendered contacts/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 509ms (Views: 137.7ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:32 -0500
+Served asset /contacts.js - 304 Not Modified (54ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:32 -0500
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:32 -0500
+Served asset /groups.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-15 19:21:32 -0500
+Served asset /application.css - 200 OK (8ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:32 -0500
+Served asset /sessions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:33 -0500
+Served asset /user.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/stories.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:33 -0500
+Served asset /stories.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:33 -0500
+Served asset /application.js - 200 OK (55ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-15 19:21:33 -0500
+Served asset /users.js - 200 OK (4ms)
+
+
+Started GET "/assets/OIMHP1.jpg" for 127.0.0.1 at 2012-06-15 19:21:33 -0500
+Served asset /OIMHP1.jpg - 304 Not Modified (10ms)
